@@ -5,12 +5,13 @@ export function Slide5Trap() {
   const [typing, setTyping] = useState(false);
   const [typed, setTyped] = useState("");
   const [showAlert, setShowAlert] = useState(false);
-  const [currentTime, setCurrentTime] = useState(new Date());
-
-  useEffect(() => {
-    const timer = setInterval(() => setCurrentTime(new Date()), 1000);
-    return () => clearInterval(timer);
-  }, []);
+  // Calculate GMT+1 time once (snapshot)
+  const [timestamp] = useState(() => {
+    const now = new Date();
+    // Create date object for GMT+1 (UTC + 1 hour)
+    const gmtPlus1Time = new Date(now.getTime() + (60 * 60 * 1000));
+    return gmtPlus1Time.toISOString().replace('T', ' ').slice(0, 19);
+  });
 
   const sqlCommand = "SELECT * FROM user_credentials_plaintext_backup";
 
@@ -224,7 +225,7 @@ export function Slide5Trap() {
                         Timestamp:
                       </p>
                       <p className="text-white break-all" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                        {currentTime.toISOString().replace('T', ' ').slice(0, 19)} GMT
+                        {timestamp} GMT+1
                       </p>
                     </div>
                     <div>
