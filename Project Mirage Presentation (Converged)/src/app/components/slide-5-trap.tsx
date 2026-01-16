@@ -54,7 +54,7 @@ export function Slide5Trap() {
   }, [typing]);
 
   return (
-    <div className="w-full h-screen flex flex-col items-center justify-center relative overflow-hidden p-4 md:p-16">
+    <div className="w-full h-screen flex flex-col items-center relative overflow-hidden p-4 md:p-16 md:pt-0">
       {/* Tabular Data Background */}
       <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full flex flex-col gap-2 p-8">
@@ -103,7 +103,7 @@ export function Slide5Trap() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="mb-4 md:mb-6 relative z-10"
+        className="mb-4 md:mb-6 md:mt-8 relative z-10"
       >
         <h2
           className="text-white tracking-[0.15em] md:tracking-[0.2em] text-center"
@@ -124,7 +124,7 @@ export function Slide5Trap() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="relative w-full max-w-4xl"
+        className="relative w-full max-w-4xl md:mt-8"
       >
         {/* Terminal Header */}
         <div
@@ -166,7 +166,7 @@ export function Slide5Trap() {
               database&gt;
             </span>
             <div className="flex-1">
-              <p className="text-white text-xs md:text-base" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              <p className="text-white text-xs md:text-base md:text-[1.1rem]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                 {typed}
                 {typing && typed.length < sqlCommand.length && (
                   <motion.span

@@ -33,7 +33,7 @@ export function Slide6Venn() {
       </motion.div>
 
       {/* Venn Diagram - Desktop Horizontal Layout */}
-      <div className="hidden md:block relative w-[800px] h-[500px]">
+      <div className="hidden md:block relative w-[800px] h-[500px] -mt-16" style={{ marginTop: "calc(-4rem - 7vh + 4vh)" }}>
         <svg width="800" height="500" viewBox="0 0 800 500" className="absolute inset-0">
           <defs>
             <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -97,7 +97,7 @@ export function Slide6Venn() {
           }
           transition={{ duration: 0.8, delay: 0.6 }}
           className="absolute text-center"
-          style={{ width: "200px", top: "50%", transform: "translateY(-30px)" }}
+          style={{ width: "200px", top: "calc(50% - 7vh)", transform: "translateY(-30px)" }}
         >
           <p
             className="text-[#00E5FF] tracking-[0.1em] mb-1"
@@ -119,7 +119,7 @@ export function Slide6Venn() {
           }
           transition={{ duration: 0.8, delay: 0.8 }}
           className="absolute text-center"
-          style={{ width: "200px", top: "50%", transform: "translateY(-30px)" }}
+          style={{ width: "200px", top: "calc(50% - 7vh)", transform: "translateY(-30px)" }}
         >
           <p
             className="text-[#00E5FF] tracking-[0.15em]"
@@ -145,7 +145,7 @@ export function Slide6Venn() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 1.2 }}
             className="absolute transform -translate-x-1/2 text-center"
-            style={{ left: "50%", top: "215px", transform: "translate(-50%, -50%)", zIndex: 100 }}
+            style={{ left: "50.5%", top: "calc(215px - 3vh)", transform: "translate(-50%, -50%)", zIndex: 100, position: "relative" }}
           >
             <div className="relative" style={{ display: "inline-block", zIndex: 100 }}>
               {/* Cyan chromatic aberration layer - subtle */}
