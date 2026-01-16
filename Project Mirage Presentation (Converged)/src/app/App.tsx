@@ -9,7 +9,7 @@ import { Slide5Trap } from "@/app/components/slide-5-trap";
 import { Slide6Venn } from "@/app/components/slide-6-venn";
 import { Slide7Pillars } from "@/app/components/slide-7-pillars";
 import { Slide8Roadmap } from "@/app/components/slide-8-roadmap";
-import logoImage from "figma:asset/dbd2726d662191dbf4bd5afe03739ca922f0521e.png";
+import logoImage from "@/assets/dbd2726d662191dbf4bd5afe03739ca922f0521e.png";
 
 const slides = [
   { component: Slide1Hero, title: "Intro" },
