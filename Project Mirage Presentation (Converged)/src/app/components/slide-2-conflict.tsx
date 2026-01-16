@@ -12,7 +12,7 @@ export function Slide2Conflict() {
   return (
     <div className="w-full h-screen flex items-center justify-center relative overflow-hidden p-4 md:p-8">
       <div className="w-full max-w-7xl h-full flex flex-col md:flex-row items-center justify-center gap-0 relative">
-        
+
         {/* Title at Top */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -165,7 +165,7 @@ export function Slide2Conflict() {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
                 />
-                
+
                 {/* Outer Ring - Rotating */}
                 <motion.g
                   animate={{ rotate: 360 }}
@@ -201,7 +201,7 @@ export function Slide2Conflict() {
                     );
                   })}
                 </motion.g>
-                
+
                 {/* Middle Ring - Counter Rotating */}
                 <motion.g
                   animate={{ rotate: -360 }}
@@ -244,7 +244,7 @@ export function Slide2Conflict() {
                     );
                   })}
                 </motion.g>
-                
+
                 {/* Inner Circle - Vault Face */}
                 <motion.circle
                   cx="80"
@@ -257,7 +257,7 @@ export function Slide2Conflict() {
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
                 />
-                
+
                 {/* Locking Bolts - 4 Directions */}
                 {[
                   { angle: 0, delay: 1.0 },
@@ -269,7 +269,7 @@ export function Slide2Conflict() {
                   const y1 = 80 + Math.sin((bolt.angle * Math.PI) / 180) * 36;
                   const x2 = 80 + Math.cos((bolt.angle * Math.PI) / 180) * 48;
                   const y2 = 80 + Math.sin((bolt.angle * Math.PI) / 180) * 48;
-                  
+
                   return (
                     <g key={`bolt-${i}`}>
                       <motion.line
@@ -281,12 +281,12 @@ export function Slide2Conflict() {
                         strokeWidth="4"
                         strokeLinecap="round"
                         initial={{ pathLength: 0, opacity: 0 }}
-                        animate={{ 
+                        animate={{
                           pathLength: [0, 1, 0.8],
                           opacity: [0, 1, 0.9]
                         }}
-                        transition={{ 
-                          duration: 1.5, 
+                        transition={{
+                          duration: 1.5,
                           delay: bolt.delay,
                         }}
                       />
@@ -303,7 +303,7 @@ export function Slide2Conflict() {
                     </g>
                   );
                 })}
-                
+
                 {/* Central Combination Dial */}
                 <motion.g
                   animate={{ rotate: [0, 360, 0] }}
@@ -318,7 +318,7 @@ export function Slide2Conflict() {
                     stroke="url(#dialGradient)"
                     strokeWidth="2"
                   />
-                  
+
                   {/* Dial Marks */}
                   {[...Array(20)].map((_, i) => {
                     const angle = (i * 360) / 20;
@@ -327,7 +327,7 @@ export function Slide2Conflict() {
                     const y1 = 80 + Math.sin((angle * Math.PI) / 180) * (isLarge ? 16 : 18);
                     const x2 = 80 + Math.cos((angle * Math.PI) / 180) * 20;
                     const y2 = 80 + Math.sin((angle * Math.PI) / 180) * 20;
-                    
+
                     return (
                       <line
                         key={`mark-${i}`}
@@ -341,7 +341,7 @@ export function Slide2Conflict() {
                       />
                     );
                   })}
-                  
+
                   {/* Dial Handle */}
                   <motion.rect
                     x="78"
@@ -355,7 +355,7 @@ export function Slide2Conflict() {
                     transition={{ delay: 1.5 }}
                   />
                 </motion.g>
-                
+
                 {/* Center Hub */}
                 <motion.circle
                   cx="80"
@@ -368,20 +368,20 @@ export function Slide2Conflict() {
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.4, delay: 1.6 }}
                 />
-                
+
                 <motion.circle
                   cx="80"
                   cy="80"
                   r="4"
                   fill="#FF5252"
                   initial={{ scale: 0 }}
-                  animate={{ 
+                  animate={{
                     scale: [0, 1],
                     opacity: [0, 1, 0.8]
                   }}
                   transition={{ duration: 0.3, delay: 1.7 }}
                 />
-                
+
                 {/* Tech Panels Around Vault */}
                 {[
                   { x: 35, y: 35, w: 12, h: 12 },
@@ -415,7 +415,7 @@ export function Slide2Conflict() {
                     />
                   </motion.g>
                 ))}
-                
+
                 {/* Scanning Beam Effect */}
                 <motion.g
                   animate={{ rotate: 360 }}
@@ -440,14 +440,14 @@ export function Slide2Conflict() {
                     r="2"
                     fill="#00B8D4"
                     initial={{ scale: 0 }}
-                    animate={{ 
+                    animate={{
                       scale: [0, 1],
                       opacity: [0, 1, 0.8]
                     }}
                     transition={{ delay: 2.2 }}
                   />
                 </motion.g>
-                
+
                 <defs>
                   <linearGradient id="vaultRingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#00B8D4" />
@@ -460,41 +460,41 @@ export function Slide2Conflict() {
                   </linearGradient>
                 </defs>
               </motion.svg>
-              
+
               {/* Orbital Rings */}
               <motion.div
                 className="absolute inset-0 flex items-center justify-center"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
               >
-                <div 
+                <div
                   className="w-56 h-56 rounded-full"
-                  style={{ 
+                  style={{
                     border: "1px dashed rgba(0, 229, 255, 0.4)",
                   }}
                 />
               </motion.div>
-              
+
               <motion.div
                 className="absolute inset-0 flex items-center justify-center"
                 animate={{ rotate: -360 }}
                 transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
               >
-                <div 
+                <div
                   className="w-64 h-64 rounded-full"
-                  style={{ 
+                  style={{
                     border: "1px dashed rgba(255, 82, 82, 0.3)",
                   }}
                 />
               </motion.div>
-              
+
               {/* Energy field particles */}
               {[...Array(8)].map((_, i) => {
                 const angle = (i * 360) / 8;
                 const radius = 100;
                 const x = Math.cos((angle * Math.PI) / 180) * radius;
                 const y = Math.sin((angle * Math.PI) / 180) * radius;
-                
+
                 return (
                   <motion.div
                     key={`vault-energy-${i}`}
@@ -508,7 +508,7 @@ export function Slide2Conflict() {
                       boxShadow: `0 0 10px ${i % 2 === 0 ? "rgba(0, 229, 255, 0.8)" : "rgba(255, 82, 82, 0.8)"}`,
                     }}
                     initial={{ scale: 0, opacity: 0 }}
-                    animate={{ 
+                    animate={{
                       scale: [0, 1, 1],
                       opacity: [0, 1, 0.6],
                     }}
@@ -519,17 +519,17 @@ export function Slide2Conflict() {
                   />
                 );
               })}
-              
+
               {/* Pulsing energy field */}
               <motion.div
                 className="absolute inset-0 flex items-center justify-center -z-10"
-                animate={{ 
+                animate={{
                   opacity: [0.2, 0.5, 0.2],
                   scale: [1, 1.15, 1]
                 }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                <div 
+                <div
                   className="w-52 h-52 rounded-full"
                   style={{
                     background: "radial-gradient(circle, rgba(255, 82, 82, 0.4) 0%, rgba(0, 229, 255, 0.2) 50%, transparent 70%)",
@@ -596,7 +596,7 @@ export function Slide2Conflict() {
                   const col = i % 3;
                   const x = 30 + col * 30;
                   const y = 30 + row * 30;
-                  
+
                   return (
                     <g key={i}>
                       {/* Node */}
@@ -608,16 +608,16 @@ export function Slide2Conflict() {
                         stroke="#00E5FF"
                         strokeWidth="1.5"
                         initial={{ scale: 0, opacity: 0 }}
-                        animate={{ 
-                          scale: [0, 1.2, 1], 
-                          opacity: [0, 1, 0.8] 
+                        animate={{
+                          scale: [0, 1.2, 1],
+                          opacity: [0, 1, 0.8]
                         }}
                         transition={{
                           duration: 0.6,
                           delay: 0.5 + i * 0.1,
                         }}
                       />
-                      
+
                       {/* Inner glow */}
                       <motion.circle
                         cx={x}
@@ -625,7 +625,7 @@ export function Slide2Conflict() {
                         r="3"
                         fill="#9D4EDD"
                         initial={{ scale: 0 }}
-                        animate={{ 
+                        animate={{
                           scale: [0, 1],
                           opacity: [0, 1, 0.6]
                         }}
@@ -637,7 +637,7 @@ export function Slide2Conflict() {
                     </g>
                   );
                 })}
-                
+
                 {/* Connecting Lines - Horizontal */}
                 {[0, 1, 3, 4].map((i) => {
                   const row = Math.floor(i / 3);
@@ -646,7 +646,7 @@ export function Slide2Conflict() {
                   const y1 = 30 + row * 30;
                   const x2 = x1 + 30;
                   const y2 = y1;
-                  
+
                   return (
                     <motion.line
                       key={`h-${i}`}
@@ -665,11 +665,11 @@ export function Slide2Conflict() {
                     />
                   );
                 })}
-                
+
                 {/* Connecting Lines - Vertical */}
                 {[0, 1, 2].map((i) => {
                   const x = 30 + i * 30;
-                  
+
                   return (
                     <motion.line
                       key={`v-${i}`}
@@ -688,7 +688,7 @@ export function Slide2Conflict() {
                     />
                   );
                 })}
-                
+
                 {/* Connecting Lines - Diagonal */}
                 {[
                   { x1: 30, y1: 30, x2: 60, y2: 60, delay: 1.6 },
@@ -713,7 +713,7 @@ export function Slide2Conflict() {
                     }}
                   />
                 ))}
-                
+
                 {/* Data Flow Particles */}
                 {[...Array(4)].map((_, i) => (
                   <motion.circle
@@ -744,19 +744,19 @@ export function Slide2Conflict() {
                     </animateMotion>
                   </motion.circle>
                 ))}
-                
+
                 {/* Hidden paths for particle animation */}
                 <defs>
                   <path id="path-0" d="M 30 30 L 60 60" />
                   <path id="path-1" d="M 60 30 L 60 60" />
                   <path id="path-2" d="M 90 30 L 60 60" />
                   <path id="path-3" d="M 30 60 L 60 30" />
-                  
+
                   <linearGradient id="labGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.3" />
                     <stop offset="100%" stopColor="#9D4EDD" stopOpacity="0.5" />
                   </linearGradient>
-                  
+
                   <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#00E5FF" />
                     <stop offset="50%" stopColor="#9D4EDD" />
@@ -764,41 +764,41 @@ export function Slide2Conflict() {
                   </linearGradient>
                 </defs>
               </motion.svg>
-              
+
               {/* Orbital Rings */}
               <motion.div
                 className="absolute inset-0 flex items-center justify-center"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
               >
-                <div 
+                <div
                   className="w-56 h-56 rounded-full"
-                  style={{ 
+                  style={{
                     border: "1px dashed rgba(0, 229, 255, 0.4)",
                   }}
                 />
               </motion.div>
-              
+
               <motion.div
                 className="absolute inset-0 flex items-center justify-center"
                 animate={{ rotate: -360 }}
                 transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
               >
-                <div 
+                <div
                   className="w-64 h-64 rounded-full"
-                  style={{ 
+                  style={{
                     border: "1px dashed rgba(255, 82, 82, 0.3)",
                   }}
                 />
               </motion.div>
-              
+
               {/* Energy field particles */}
               {[...Array(8)].map((_, i) => {
                 const angle = (i * 360) / 8;
                 const radius = 100;
                 const x = Math.cos((angle * Math.PI) / 180) * radius;
                 const y = Math.sin((angle * Math.PI) / 180) * radius;
-                
+
                 return (
                   <motion.div
                     key={`lab-energy-${i}`}
@@ -812,7 +812,7 @@ export function Slide2Conflict() {
                       boxShadow: `0 0 10px ${i % 2 === 0 ? "rgba(0, 229, 255, 0.8)" : "rgba(157, 78, 221, 0.8)"}`,
                     }}
                     initial={{ scale: 0, opacity: 0 }}
-                    animate={{ 
+                    animate={{
                       scale: [0, 1, 1],
                       opacity: [0, 1, 0.6],
                     }}
@@ -823,17 +823,17 @@ export function Slide2Conflict() {
                   />
                 );
               })}
-              
+
               {/* Pulsing energy field */}
               <motion.div
                 className="absolute inset-0 flex items-center justify-center -z-10"
-                animate={{ 
+                animate={{
                   opacity: [0.2, 0.5, 0.2],
                   scale: [1, 1.15, 1]
                 }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                <div 
+                <div
                   className="w-52 h-52 rounded-full"
                   style={{
                     background: "radial-gradient(circle, rgba(157, 78, 221, 0.4) 0%, rgba(0, 229, 255, 0.2) 50%, transparent 70%)",
@@ -864,35 +864,22 @@ export function Slide2Conflict() {
           </motion.div>
         </div>
 
-      {/* Title at Top */}
-      <motion.div
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="absolute top-16 left-1/2 transform -translate-x-1/2 text-center hidden md:block"
-      >
-        <h2
-          className="text-white tracking-[0.2em]"
-          style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 300, fontSize: "2.5rem" }}
-        >
-          EXISTENTIAL CONFLICT
-        </h2>
-      </motion.div>
 
-      {/* Data Paralysis Label */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#FF5252]/20 border border-[#FF5252]/40 px-6 py-3 rounded backdrop-blur-xl text-center hidden md:block"
+
+        {/* Data Paralysis Label */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#FF5252]/20 border border-[#FF5252]/40 px-6 py-3 rounded backdrop-blur-xl text-center hidden md:block"
+        >
+          <p
+            className="text-[#FF5252] tracking-[0.15em]"
+            style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "1rem" }}
           >
-            <p
-              className="text-[#FF5252] tracking-[0.15em]"
-              style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "1rem" }}
-            >
-              DATA PARALYSIS
-            </p>
-          </motion.div>
+            DATA PARALYSIS
+          </p>
+        </motion.div>
       </div>
     </div>
   );
@@ -923,7 +910,7 @@ function VaultSVG() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         />
-        
+
         {/* Outer Ring - Rotating */}
         <motion.g
           animate={{ rotate: 360 }}
@@ -959,7 +946,7 @@ function VaultSVG() {
             );
           })}
         </motion.g>
-        
+
         {/* Middle Ring - Counter Rotating */}
         <motion.g
           animate={{ rotate: -360 }}
@@ -1002,7 +989,7 @@ function VaultSVG() {
             );
           })}
         </motion.g>
-        
+
         {/* Inner Circle - Vault Face */}
         <motion.circle
           cx="80"
@@ -1015,7 +1002,7 @@ function VaultSVG() {
           animate={{ scale: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         />
-        
+
         {/* Locking Bolts - 4 Directions */}
         {[
           { angle: 0, delay: 1.0 },
@@ -1027,7 +1014,7 @@ function VaultSVG() {
           const y1 = 80 + Math.sin((bolt.angle * Math.PI) / 180) * 36;
           const x2 = 80 + Math.cos((bolt.angle * Math.PI) / 180) * 48;
           const y2 = 80 + Math.sin((bolt.angle * Math.PI) / 180) * 48;
-          
+
           return (
             <g key={`bolt-${i}`}>
               <motion.line
@@ -1039,12 +1026,12 @@ function VaultSVG() {
                 strokeWidth="4"
                 strokeLinecap="round"
                 initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ 
+                animate={{
                   pathLength: [0, 1, 0.8],
                   opacity: [0, 1, 0.9]
                 }}
-                transition={{ 
-                  duration: 1.5, 
+                transition={{
+                  duration: 1.5,
                   delay: bolt.delay,
                 }}
               />
@@ -1060,7 +1047,7 @@ function VaultSVG() {
             </g>
           );
         })}
-        
+
         {/* Central Combination Dial */}
         <motion.g
           animate={{ rotate: [0, 360, 0] }}
@@ -1075,7 +1062,7 @@ function VaultSVG() {
             stroke="url(#dialGradient)"
             strokeWidth="2"
           />
-          
+
           {/* Dial Marks */}
           {[...Array(20)].map((_, i) => {
             const angle = (i * 360) / 20;
@@ -1084,7 +1071,7 @@ function VaultSVG() {
             const y1 = 80 + Math.sin((angle * Math.PI) / 180) * (isLarge ? 16 : 18);
             const x2 = 80 + Math.cos((angle * Math.PI) / 180) * 20;
             const y2 = 80 + Math.sin((angle * Math.PI) / 180) * 20;
-            
+
             return (
               <line
                 key={`mark-${i}`}
@@ -1098,7 +1085,7 @@ function VaultSVG() {
               />
             );
           })}
-          
+
           <motion.rect
             x="78"
             y="62"
@@ -1111,7 +1098,7 @@ function VaultSVG() {
             transition={{ delay: 1.5 }}
           />
         </motion.g>
-        
+
         {/* Center Hub */}
         <motion.circle
           cx="80"
@@ -1124,20 +1111,20 @@ function VaultSVG() {
           animate={{ scale: 1 }}
           transition={{ duration: 0.4, delay: 1.6 }}
         />
-        
+
         <motion.circle
           cx="80"
           cy="80"
           r="4"
           fill="#FF5252"
           initial={{ scale: 0 }}
-          animate={{ 
+          animate={{
             scale: [0, 1],
             opacity: [0, 1, 0.8]
           }}
           transition={{ duration: 0.3, delay: 1.7 }}
         />
-        
+
         {/* Tech Panels */}
         {[
           { x: 35, y: 35, w: 12, h: 12 },
@@ -1171,7 +1158,7 @@ function VaultSVG() {
             />
           </motion.g>
         ))}
-        
+
         {/* Scanning Beam */}
         <motion.g
           animate={{ rotate: 360 }}
@@ -1196,14 +1183,14 @@ function VaultSVG() {
             r="2"
             fill="#00B8D4"
             initial={{ scale: 0 }}
-            animate={{ 
+            animate={{
               scale: [0, 1],
               opacity: [0, 1, 0.8]
             }}
             transition={{ delay: 2.2 }}
           />
         </motion.g>
-        
+
         <defs>
           <linearGradient id="vaultRingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#00B8D4" />
@@ -1216,41 +1203,41 @@ function VaultSVG() {
           </linearGradient>
         </defs>
       </motion.svg>
-      
+
       {/* Orbital Rings */}
       <motion.div
         className="absolute inset-0 flex items-center justify-center"
         animate={{ rotate: 360 }}
         transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
       >
-        <div 
+        <div
           className="w-48 h-48 rounded-full"
-          style={{ 
+          style={{
             border: "1px dashed rgba(0, 184, 212, 0.3)",
           }}
         />
       </motion.div>
-      
+
       <motion.div
         className="absolute inset-0 flex items-center justify-center"
         animate={{ rotate: -360 }}
         transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
       >
-        <div 
+        <div
           className="w-56 h-56 rounded-full"
-          style={{ 
+          style={{
             border: "1px dashed rgba(255, 82, 82, 0.2)",
           }}
         />
       </motion.div>
-      
+
       {/* Energy field particles */}
       {[...Array(8)].map((_, i) => {
         const angle = (i * 360) / 8;
         const radius = 90;
         const x = Math.cos((angle * Math.PI) / 180) * radius;
         const y = Math.sin((angle * Math.PI) / 180) * radius;
-        
+
         return (
           <motion.div
             key={`energy-${i}`}
@@ -1264,7 +1251,7 @@ function VaultSVG() {
               boxShadow: `0 0 10px ${i % 2 === 0 ? "rgba(0, 184, 212, 0.8)" : "rgba(255, 82, 82, 0.8)"}`,
             }}
             initial={{ scale: 0, opacity: 0 }}
-            animate={{ 
+            animate={{
               scale: [0, 1, 1],
               opacity: [0, 1, 0.6],
             }}
@@ -1275,17 +1262,17 @@ function VaultSVG() {
           />
         );
       })}
-      
+
       {/* Pulsing energy field */}
       <motion.div
         className="absolute inset-0 flex items-center justify-center -z-10"
-        animate={{ 
+        animate={{
           opacity: [0.2, 0.5, 0.2],
           scale: [1, 1.15, 1]
         }}
         transition={{ duration: 3, repeat: Infinity }}
       >
-        <div 
+        <div
           className="w-52 h-52 rounded-full"
           style={{
             background: "radial-gradient(circle, rgba(255, 82, 82, 0.4) 0%, rgba(0, 184, 212, 0.2) 50%, transparent 70%)",
@@ -1316,7 +1303,7 @@ function LaboratorySVG() {
           const col = i % 3;
           const x = 30 + col * 30;
           const y = 30 + row * 30;
-          
+
           return (
             <g key={i}>
               <motion.circle
@@ -1327,23 +1314,23 @@ function LaboratorySVG() {
                 stroke="#00E5FF"
                 strokeWidth="1.5"
                 initial={{ scale: 0, opacity: 0 }}
-                animate={{ 
-                  scale: [0, 1.2, 1], 
-                  opacity: [0, 1, 0.8] 
+                animate={{
+                  scale: [0, 1.2, 1],
+                  opacity: [0, 1, 0.8]
                 }}
                 transition={{
                   duration: 0.6,
                   delay: 0.5 + i * 0.1,
                 }}
               />
-              
+
               <motion.circle
                 cx={x}
                 cy={y}
                 r="3"
                 fill="#9D4EDD"
                 initial={{ scale: 0 }}
-                animate={{ 
+                animate={{
                   scale: [0, 1],
                   opacity: [0, 1, 0.6]
                 }}
@@ -1355,7 +1342,7 @@ function LaboratorySVG() {
             </g>
           );
         })}
-        
+
         {/* Connecting Lines - Horizontal */}
         {[0, 1, 3, 4].map((i) => {
           const row = Math.floor(i / 3);
@@ -1364,7 +1351,7 @@ function LaboratorySVG() {
           const y1 = 30 + row * 30;
           const x2 = x1 + 30;
           const y2 = y1;
-          
+
           return (
             <motion.line
               key={`h-${i}`}
@@ -1383,11 +1370,11 @@ function LaboratorySVG() {
             />
           );
         })}
-        
+
         {/* Connecting Lines - Vertical */}
         {[0, 1, 2].map((i) => {
           const x = 30 + i * 30;
-          
+
           return (
             <motion.line
               key={`v-${i}`}
@@ -1406,7 +1393,7 @@ function LaboratorySVG() {
             />
           );
         })}
-        
+
         {/* Connecting Lines - Diagonal */}
         {[
           { x1: 30, y1: 30, x2: 60, y2: 60, delay: 1.6 },
@@ -1431,7 +1418,7 @@ function LaboratorySVG() {
             }}
           />
         ))}
-        
+
         {/* Data Flow Particles */}
         {[...Array(4)].map((_, i) => (
           <motion.circle
@@ -1462,18 +1449,18 @@ function LaboratorySVG() {
             </animateMotion>
           </motion.circle>
         ))}
-        
+
         <defs>
           <path id="path-0" d="M 30 30 L 60 60" />
           <path id="path-1" d="M 60 30 L 60 60" />
           <path id="path-2" d="M 90 30 L 60 60" />
           <path id="path-3" d="M 30 60 L 60 30" />
-          
+
           <linearGradient id="labGradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.3" />
             <stop offset="100%" stopColor="#9D4EDD" stopOpacity="0.5" />
           </linearGradient>
-          
+
           <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#00E5FF" />
             <stop offset="50%" stopColor="#9D4EDD" />
@@ -1481,41 +1468,41 @@ function LaboratorySVG() {
           </linearGradient>
         </defs>
       </motion.svg>
-      
+
       {/* Orbital Rings */}
       <motion.div
         className="absolute inset-0 flex items-center justify-center"
         animate={{ rotate: 360 }}
         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
       >
-        <div 
+        <div
           className="w-36 h-36 rounded-full"
-          style={{ 
+          style={{
             border: "1px dashed rgba(0, 229, 255, 0.3)",
           }}
         />
       </motion.div>
-      
+
       <motion.div
         className="absolute inset-0 flex items-center justify-center"
         animate={{ rotate: -360 }}
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
       >
-        <div 
+        <div
           className="w-44 h-44 rounded-full"
-          style={{ 
+          style={{
             border: "1px dashed rgba(157, 78, 221, 0.2)",
           }}
         />
       </motion.div>
-      
+
       {/* Energy field particles */}
       {[...Array(8)].map((_, i) => {
         const angle = (i * 360) / 8;
         const radius = 70;
         const x = Math.cos((angle * Math.PI) / 180) * radius;
         const y = Math.sin((angle * Math.PI) / 180) * radius;
-        
+
         return (
           <motion.div
             key={`energy-${i}`}
@@ -1529,7 +1516,7 @@ function LaboratorySVG() {
               boxShadow: `0 0 10px ${i % 2 === 0 ? "rgba(0, 229, 255, 0.8)" : "rgba(157, 78, 221, 0.8)"}`,
             }}
             initial={{ scale: 0, opacity: 0 }}
-            animate={{ 
+            animate={{
               scale: [0, 1, 1],
               opacity: [0, 1, 0.6],
             }}
@@ -1540,17 +1527,17 @@ function LaboratorySVG() {
           />
         );
       })}
-      
+
       {/* Pulsing energy field */}
       <motion.div
         className="absolute inset-0 flex items-center justify-center -z-10"
-        animate={{ 
+        animate={{
           opacity: [0.2, 0.5, 0.2],
           scale: [1, 1.15, 1]
         }}
         transition={{ duration: 3, repeat: Infinity }}
       >
-        <div 
+        <div
           className="w-40 h-40 rounded-full"
           style={{
             background: "radial-gradient(circle, rgba(157, 78, 221, 0.4) 0%, rgba(0, 229, 255, 0.2) 50%, transparent 70%)",

@@ -16,7 +16,7 @@ export function Slide1Hero() {
         initial={{ opacity: 0, y: 50 }}
         animate={animate ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, delay: 1.6 }}
-        className="absolute flex flex-col items-center gap-4 md:gap-6 z-10 max-w-full"
+        className="absolute flex flex-col items-center gap-4 z-10 max-w-full"
       >
         <h1
           className="tracking-[0.3em] text-white text-center px-4"
@@ -40,7 +40,7 @@ export function Slide1Hero() {
           initial={{ opacity: 0 }}
           animate={animate ? { opacity: 0.7 } : {}}
           transition={{ duration: 0.8, delay: 2.2 }}
-          className="text-white/70 tracking-[0.15em] mt-2 md:mt-4 text-center px-4"
+          className="text-white/70 tracking-[0.15em] mt-2 text-center px-4"
           style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300, fontSize: "clamp(0.8rem, 3vw, 1rem)" }}
         >
           Data protection into a pathway for AI innovation

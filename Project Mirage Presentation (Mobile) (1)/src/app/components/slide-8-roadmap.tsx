@@ -33,12 +33,7 @@ export function Slide8Roadmap() {
 
   return (
     <div className="w-full h-screen flex items-center justify-center relative overflow-hidden p-4 md:p-16 pt-24 md:pt-16">
-      {/* MOBILE: Added pt-24 for mobile padding-top, Desktop: pt-16 */}
       <div className="w-full max-w-7xl flex flex-col md:flex-row gap-8 md:gap-16 items-start md:items-center mt-4 md:mt-0">
-        {/* MOBILE: flex-col for vertical stacking, Desktop: flex-row */}
-        {/* MOBILE: gap-8, Desktop: gap-16 */}
-        {/* MOBILE: mt-4, Desktop: mt-0 */}
-        
         {/* Left - Title */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -50,33 +45,23 @@ export function Slide8Roadmap() {
             className="text-white tracking-[0.15em] md:tracking-[0.2em] mb-4 md:mb-8 leading-tight"
             style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 300, fontSize: "clamp(1.3rem, 4.5vw, 2.5rem)" }}
           >
-            {/* MOBILE: tracking-[0.15em], Desktop: tracking-[0.2em] */}
-            {/* MOBILE: mb-4, Desktop: mb-8 */}
-            {/* MOBILE: fontSize scales from 1.3rem, Desktop: up to 2.5rem */}
             FROM PARALYSIS<br />TO SOVEREIGNTY
           </h2>
 
           <div className="w-24 md:w-32 h-[2px] bg-gradient-to-r from-[#00E5FF] to-transparent mb-4 md:mb-8" />
-          {/* MOBILE: w-24 and mb-4, Desktop: w-32 and mb-8 */}
 
           <p
             className="text-white/70 tracking-[0.08em] md:tracking-[0.1em] leading-relaxed mb-6 md:mb-8"
             style={{ fontFamily: "'Inter', sans-serif", fontSize: "clamp(0.85rem, 2.2vw, 1.1rem)" }}
           >
-            {/* MOBILE: tracking-[0.08em] and mb-6, Desktop: tracking-[0.1em] and mb-8 */}
-            {/* MOBILE: fontSize scales from 0.85rem, Desktop: up to 1.1rem */}
             The future of data sovereignty isn't a choice between security and innovation—it's the synthesis of both.
           </p>
         </motion.div>
 
         {/* Right - Timeline */}
         <div className="flex-1 relative w-full overflow-y-auto md:overflow-y-visible pb-8 md:pb-0" style={{ maxHeight: "calc(100vh - 380px)" }}>
-          {/* MOBILE: overflow-y-auto with pb-8 for scrollable content, Desktop: overflow-y-visible with pb-0 */}
-          
-          {/* Laser Beam Line - MOBILE & DESKTOP OPTIMIZED */}
+          {/* Laser Beam Line */}
           <svg className="absolute left-8 md:left-10 top-0" width="4" height="125%">
-            {/* MOBILE: left-8 positioning, Desktop: left-10 */}
-            {/* Extended to 125% height to reach past the last milestone dot */}
             <defs>
               <linearGradient id="laserGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="rgba(0, 229, 255, 0)" />
@@ -109,7 +94,6 @@ export function Slide8Roadmap() {
 
           {/* Milestones */}
           <div className="space-y-12 pl-20 md:pl-24">
-            {/* MOBILE: pl-20 for left padding, Desktop: pl-24 */}
             {milestones.map((milestone, index) => (
               <motion.div
                 key={index}
@@ -118,10 +102,8 @@ export function Slide8Roadmap() {
                 transition={{ duration: 0.6, delay: milestone.delay }}
               >
                 <GlassCard className="p-6 relative" delay={milestone.delay}>
-                  {/* Node on Timeline - Enhanced with Glassmorphism - MOBILE & DESKTOP OPTIMIZED */}
+                  {/* Node on Timeline - Enhanced with Glassmorphism */}
                   <div className="absolute -left-[62px] md:-left-[70px] top-1/2 transform -translate-y-1/2">
-                    {/* MOBILE: -left-[62px] for perfect dot centering on laser line, Desktop: -left-[70px] */}
-                    {/* Mathematical calculation: MOBILE centering based on pl-20 and dot size */}
                     {/* Outer Pulsing Ring */}
                     <motion.div
                       initial={{ scale: 0, opacity: 0 }}

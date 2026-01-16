@@ -54,7 +54,7 @@ export function Slide5Trap() {
   }, [typing]);
 
   return (
-    <div className="w-full h-screen flex flex-col items-center relative overflow-hidden p-4 md:p-16 md:pt-0">
+    <div className="w-full h-screen flex flex-col items-center justify-center relative overflow-hidden p-4 md:p-16 md:pt-0">
       {/* Tabular Data Background */}
       <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full flex flex-col gap-2 p-8">

@@ -61,7 +61,7 @@ export function Slide8Roadmap() {
         {/* Right - Timeline */}
         <div className="flex-1 relative w-full overflow-y-auto md:overflow-y-visible pb-8 md:pb-0" style={{ maxHeight: "calc(100vh - 380px)" }}>
           {/* Laser Beam Line */}
-          <svg className="absolute left-8 md:left-8 top-0 bottom-0" width="4" height="100%">
+          <svg className="absolute left-8 md:left-8 top-0 h-[125%] md:h-full" width="4">
             <defs>
               <linearGradient id="laserGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="rgba(0, 229, 255, 0)" />
@@ -103,15 +103,15 @@ export function Slide8Roadmap() {
               >
                 <GlassCard className="p-6 relative" delay={milestone.delay}>
                   {/* Node on Timeline - Enhanced with Glassmorphism */}
-                  <div className="absolute -left-[46px] md:-left-[46px] top-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                  <div className="absolute -left-[62px] md:-left-[46px] top-1/2 transform -translate-y-1/2 -translate-x-1/2">
                     {/* Outer Pulsing Ring */}
                     <motion.div
                       initial={{ scale: 0, opacity: 0 }}
-                      animate={{ 
+                      animate={{
                         scale: [1, 1.4, 1],
                         opacity: [0.6, 0.2, 0.6]
                       }}
-                      transition={{ 
+                      transition={{
                         duration: 2.5,
                         delay: milestone.delay,
                         repeat: Infinity,
@@ -152,10 +152,10 @@ export function Slide8Roadmap() {
                       >
                         {/* Highlight Dot */}
                         <motion.div
-                          animate={{ 
+                          animate={{
                             opacity: [0.8, 1, 0.8],
                           }}
-                          transition={{ 
+                          transition={{
                             duration: 1.5,
                             repeat: Infinity,
                             ease: "easeInOut"
@@ -170,11 +170,11 @@ export function Slide8Roadmap() {
                       {/* Rotating Accent Ring */}
                       <motion.div
                         initial={{ rotate: 0, opacity: 0 }}
-                        animate={{ 
+                        animate={{
                           rotate: 360,
                           opacity: [0.6, 0.8, 0.6]
                         }}
-                        transition={{ 
+                        transition={{
                           rotate: {
                             duration: 8,
                             repeat: Infinity,
