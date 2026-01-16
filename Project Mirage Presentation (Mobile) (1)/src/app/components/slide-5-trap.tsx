@@ -5,12 +5,20 @@ export function Slide5Trap() {
   const [typing, setTyping] = useState(false);
   const [typed, setTyped] = useState("");
   const [showAlert, setShowAlert] = useState(false);
-  // Calculate GMT+1 time once (snapshot)
+  // Calculate local time once (snapshot)
   const [timestamp] = useState(() => {
     const now = new Date();
-    // Create date object for GMT+1 (UTC + 1 hour)
-    const gmtPlus1Time = new Date(now.getTime() + (60 * 60 * 1000));
-    return gmtPlus1Time.toISOString().replace('T', ' ').slice(0, 19);
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    // Get local timezone name (e.g. CST, EST, GMT+1)
+    const timeZone = now.toLocaleTimeString('en-us', { timeZoneName: 'short' }).split(' ').pop();
+
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds} ${timeZone}`;
   });
 
   const sqlCommand = "SELECT * FROM user_credentials_plaintext_backup";
@@ -225,7 +233,7 @@ export function Slide5Trap() {
                         Timestamp:
                       </p>
                       <p className="text-white break-all" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                        {timestamp} GMT+1
+                        {timestamp}
                       </p>
                     </div>
                     <div>
