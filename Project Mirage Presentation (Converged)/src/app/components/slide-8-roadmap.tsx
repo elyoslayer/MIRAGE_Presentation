@@ -59,7 +59,7 @@ export function Slide8Roadmap() {
         </motion.div>
 
         {/* Right - Timeline */}
-        <div className="flex-1 relative w-full overflow-y-auto md:overflow-y-visible pb-8 md:pb-0" style={{ maxHeight: "calc(100vh - 380px)" }}>
+        <div className="flex-1 relative w-full overflow-y-auto md:overflow-y-visible pb-8 md:pb-0 max-h-[calc(100vh-380px)] md:max-h-none">
           {/* Laser Beam Line */}
           <svg className="absolute left-8 md:left-8 top-0 h-[125%] md:h-full" width="4">
             <defs>
@@ -103,7 +103,7 @@ export function Slide8Roadmap() {
               >
                 <GlassCard className="p-6 relative" delay={milestone.delay}>
                   {/* Node on Timeline - Enhanced with Glassmorphism */}
-                  <div className="absolute -left-[62px] md:-left-[46px] top-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                  <div className="absolute -left-[62px] md:-left-[46px] top-1/2 transform -translate-y-1/2 md:-translate-x-1/2">
                     {/* Outer Pulsing Ring */}
                     <motion.div
                       initial={{ scale: 0, opacity: 0 }}
