@@ -5,6 +5,12 @@ export function Slide5Trap() {
   const [typing, setTyping] = useState(false);
   const [typed, setTyped] = useState("");
   const [showAlert, setShowAlert] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => setCurrentTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   const sqlCommand = "SELECT * FROM user_credentials_plaintext_backup";
 
@@ -13,7 +19,7 @@ export function Slide5Trap() {
     const rows = [];
     const totalRows = 40;
     const redRowIndices = new Set([7, 15, 23, 31]); // Random red rows representing threats
-    
+
     for (let i = 0; i < totalRows; i++) {
       const isRed = redRowIndices.has(i);
       rows.push({
@@ -65,7 +71,7 @@ export function Slide5Trap() {
               animate={{ opacity: row.isRed ? 0.7 : 0.3, x: 0 }}
               transition={{ duration: 0.6, delay: row.id * 0.03 }}
               className="flex gap-6 text-xs whitespace-nowrap"
-              style={{ 
+              style={{
                 fontFamily: "'JetBrains Mono', monospace",
                 color: row.isRed ? "#FF5252" : "#00E5FF"
               }}
@@ -79,7 +85,7 @@ export function Slide5Trap() {
             </motion.div>
           ))}
         </div>
-        
+
         {/* Scanning line effect */}
         <motion.div
           className="absolute left-0 w-full h-[2px]"
@@ -146,14 +152,14 @@ export function Slide5Trap() {
           animate={
             showAlert
               ? {
-                  background: [
-                    "rgba(11, 16, 33, 0.95)",
-                    "rgba(255, 82, 82, 0.3)",
-                    "rgba(11, 16, 33, 0.95)",
-                    "rgba(255, 82, 82, 0.3)",
-                    "rgba(11, 16, 33, 0.95)",
-                  ],
-                }
+                background: [
+                  "rgba(11, 16, 33, 0.95)",
+                  "rgba(255, 82, 82, 0.3)",
+                  "rgba(11, 16, 33, 0.95)",
+                  "rgba(255, 82, 82, 0.3)",
+                  "rgba(11, 16, 33, 0.95)",
+                ],
+              }
               : {}
           }
           transition={{ duration: 0.8 }}
@@ -218,7 +224,7 @@ export function Slide5Trap() {
                         Timestamp:
                       </p>
                       <p className="text-white break-all" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                        2026-01-13 14:23:17 UTC
+                        {currentTime.toISOString().replace('T', ' ').slice(0, 19)} GMT
                       </p>
                     </div>
                     <div>
